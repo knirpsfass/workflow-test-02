@@ -19,7 +19,7 @@ jobs:
       - name: hiho
         run: |
           output=$(python test.py)
-          echo "changelog=$output"
+          echo "changelog=$output" >> $GITHUB_OUTPUT
         id: step1
         
       - name: Print changelog
