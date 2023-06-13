@@ -1,0 +1,28 @@
+name: run test.py
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9' # install the python version needed
+          
+      - name: execute py script # run main.py
+        run: |
+          script_output = $(python test.py)
+          echo "logs=$script_output" >> $GITHUB_OUTPUT
+
+          
+      - name: Create workflow run summary
+        if: ${{ success() }}
+        run: |
+          echo "${{ steps.create.outputs.logs }}" >> $GITHUB_STEP_SUMMARY
