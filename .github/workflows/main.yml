@@ -19,6 +19,9 @@ jobs:
       - name: hiho
         run: |
           output=$(python test.py)
+          output="${content//'%'/'%25'}"
+          output="${content//$'\n'/'%0A'}"
+          output="${content//$'\r'/'%0D'}"
           echo "changelog=$output" >> $GITHUB_OUTPUT
         id: step1
         
