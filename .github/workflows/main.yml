@@ -16,11 +16,12 @@ jobs:
         with:
           python-version: '3.9' # install the python version needed
           
-      - name: execute py script # run main.py
+      - name: Run test.py
+        id: run_test
         run: |
-          script_output = $(python test.py)
-          echo "logs=$script_output" >> $GITHUB_OUTPUT
-
+          script_output=$(python test.py)
+          echo "hellooo"
+          echo "logs=${script_output}" >> $GITHUB_OUTPUT
           
       - name: Create workflow run summary
         if: ${{ success() }}
