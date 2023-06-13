@@ -19,6 +19,8 @@ jobs:
       - name: hiho
         run: |
           output=$(python test.py)
+          last_line=$(echo "$output" | grep -oE 'DONE - created issue CICDSSWA-[0-9]+')
+          echo $last_line
           output="${output//'%'/'%25'}"
           output="${output//$'\n'/'%0A'}"
           output="${output//$'\r'/'%0D'}"
