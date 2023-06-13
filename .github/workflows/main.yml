@@ -19,7 +19,7 @@ jobs:
       - name: hiho
         run: |
           output=$(python test.py)
-          ticket_id= $output | tail -n 1 | grep -oE 'CICDSSWA-[0-9]+`'
+          ticket_id= echo $output | tail -n 1 | grep -oE 'CICDSSWA-[0-9]+`'
           echo "changelog=$ticket_id" >> $GITHUB_OUTPUT
         id: step1
         
