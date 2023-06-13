@@ -23,4 +23,4 @@ jobs:
         id: step1
         
       - name: Print changelog
-        run: echo "${{ steps.step1.outputs.changelog }}" >> $GITHUB_SUMMARY
+        run: echo "${{ steps.step1.outputs.changelog }}" >> $GITHUB_STEP_SUMMARY
