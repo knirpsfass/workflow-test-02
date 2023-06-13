@@ -16,14 +16,11 @@ jobs:
         with:
           python-version: '3.9' # install the python version needed
           
-      - name: Run test.py
-        id: run_test
-        run: |
-          script_output=$(python test.py)
-          echo "hellooo"
-          echo "logs=${script_output}" >> $GITHUB_OUTPUT
-          
-      - name: Create workflow run summary
-        if: ${{ success() }}
-        run: |
-          echo "${{ steps.create.outputs.logs }}" >> $GITHUB_STEP_SUMMARY
+      - name: hiho
+      - run: |
+          output=$(python test.py)
+          echo "::set-output name=changelog::$output"
+        id: step1
+        
+      - name: Print changelog
+        run: echo "${{ steps.step1.outputs.changelog }}"
