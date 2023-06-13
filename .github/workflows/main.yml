@@ -19,8 +19,8 @@ jobs:
       - name: hiho
         run: |
           output=$(python test.py)
-          last_line=$(echo "$output" | grep -oE 'DONE - created issue CICDSSWA-[0-9]+')
-          echo "changelog=$last_line" >> $GITHUB_OUTPUT
+          ticket_id= $output | tail -n 1 | grep -oE 'CICDSSWA-[0-9]+`'
+          echo "changelog=$ticket_id" >> $GITHUB_OUTPUT
         id: step1
         
       - name: Print changelog
