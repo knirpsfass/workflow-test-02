@@ -19,7 +19,7 @@ jobs:
       - name: hiho
         run: |
           output=$(python test.py)
-          echo "::set-output name=changelog::$output"
+          echo "changelog=$output"
         id: step1
         
       - name: Print changelog
