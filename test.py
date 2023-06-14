@@ -7,6 +7,6 @@ print(
 |                                     |
 |                                     |
 =======================================
-DONE - created issue CICDSSWA-1234
+DONE - created issue CICDSSWA-1234 hallo
 '''
     )
