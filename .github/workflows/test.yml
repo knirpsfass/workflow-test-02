@@ -16,12 +16,12 @@ jobs:
     steps:
     
       - name: checkout true
-        if: ${{inputs.test == 'true'}}
+        if: ${{inputs.test == true}}
         run: | 
           echo ${{inputs.test}}
 
       - name: checkout refalset
-        if: ${{inputs.test == 'false'}}
+        if: ${{inputs.test == false}}
         run: | 
           echo ${{inputs.test}}
           
