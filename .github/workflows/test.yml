@@ -12,9 +12,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{inputs.test == 'true'}}
+    
     steps:
-
-      - name: checkout repo content
+    
+      - name: checkout true
+        if: ${{inputs.test == 'true'}}
         run: | 
+          echo ${{inputs.test}}
+
+      - name: checkout refalset
+        if: ${{inputs.test == 'false'}}
+        run: | 
+          echo ${{inputs.test}}
+          
+      - name: lol
+        run: |
           echo ${{inputs.test}}
