@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout true
-        if: ${{ github.event.inputs.test == true }
+        if: ${{ github.event.inputs.test == true }}
         run: |
           echo ${{inputs.test}}
 
