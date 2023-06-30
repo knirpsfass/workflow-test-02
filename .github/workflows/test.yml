@@ -1,6 +1,4 @@
-
 name: run test.py
-
 on:
   workflow_dispatch:
     inputs:
@@ -12,19 +10,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
-    
       - name: checkout true
-        if: ${{inputs.test == true}}
-        run: | 
+        if: ${{ github.event.inputs.test == true }
+        run: |
           echo ${{inputs.test}}
 
       - name: checkout refalset
-        if: ${{inputs.test == false}}
-        run: | 
+        if: ${{ github.event.inputs.test == false }}
+        run: |
           echo ${{inputs.test}}
-          
       - name: lol
         run: |
           echo ${{inputs.test}}
