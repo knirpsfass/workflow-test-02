@@ -11,6 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Output Inputs
+        run: echo "${{ toJSON(github.event.inputs) }}"
       - name: checkout true
         if: ${{ github.event.inputs.test == 'true' }}
         run: |
