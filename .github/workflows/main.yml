@@ -2,10 +2,15 @@ name: run test.py
 
 on:
   workflow_dispatch:
+    inputs:
+      test:
+        description: "lol"
+        default: "Yeha"
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: ${{inputs.test}} OKAYYYY
     steps:
 
       - name: checkout repo content
