@@ -1,4 +1,5 @@
 name: run test.py
+run-name: ${{inputs.test}} OKAYYYY LEEETS GOOO
 
 on:
   workflow_dispatch:
