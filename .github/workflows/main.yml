@@ -24,6 +24,7 @@ jobs:
           
       - name: hiho
         run: |
+          echo ${{ github.workspace }}
           output=$(python test.py)
           ticket_id=$(echo "$output" | tail -n 1 | grep -oE 'CICDSSWA-[0-9]+')
           echo "changelog=$ticket_id" >> $GITHUB_OUTPUT
