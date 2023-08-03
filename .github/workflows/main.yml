@@ -34,4 +34,4 @@ jobs:
         run: echo "${{ steps.step1.outputs.changelog }}" >> $GITHUB_STEP_SUMMARY
 
       - name: ansi test
-        run: echo "\e[43m Test \e[43m"
+        run: echo -e "\e[43m Test \e[43m"
