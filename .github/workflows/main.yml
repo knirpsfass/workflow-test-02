@@ -25,7 +25,7 @@ jobs:
           
       - name: Set Current 
         run: |
-          echo "$TEST" >> $GITHUB_ENV
+          echo "$TEST"
         
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
