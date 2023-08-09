@@ -13,7 +13,7 @@ on:
 jobs:
   build:
     env:
-      TEST: ${{inputs.customTime}} || $(date +"%Y-%m-%dT%H:%M:%S.%3NZ")
+      TEST: ${{inputs.customTime || $(date +"%Y-%m-%dT%H:%M:%S.%3NZ")}}
     runs-on: ubuntu-latest
     name: ${{inputs.test}} OKAYYYY
     steps:
