@@ -7,12 +7,20 @@ on:
       test:
         description: "lol"
         default: "Yeha"
+      customTime:
+        description: "jaja"
 
 jobs:
   build:
+    env:
+      TEST: ${{inputs.customTime}} || $(date +"%Y-%m-%dT%H:%M:%S.%3NZ")
     runs-on: ubuntu-latest
     name: ${{inputs.test}} OKAYYYY
     steps:
+    
+      - name: test
+        run: echo $TEST
+        
 
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
