@@ -22,6 +22,10 @@ jobs:
         id: set_time
         run: |
           echo "TEST=$(date -u +"%Y-%m-%dT%H:%M:%S.%3NZ")" >> $GITHUB_ENV
+          
+      - name: Set Current 
+        run: |
+          echo "$TEST" >> $GITHUB_ENV
         
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content to github runner
