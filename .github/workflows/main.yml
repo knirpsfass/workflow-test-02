@@ -13,13 +13,15 @@ on:
 jobs:
   build:
     env:
-      TEST: ${{inputs.customTime || $(date +"%Y-%m-%dT%H:%M:%S.%3NZ")}}
+      TEST: ${{ github.event.inputs.customTime || steps.set_time.outputs.formatted_time }}
     runs-on: ubuntu-latest
     name: ${{inputs.test}} OKAYYYY
     steps:
-    
-      - name: test
-        run: echo $TEST
+      - name: Set Current Time
+        id: set_time
+        run: |
+          formatted_time=$(date -u +"%Y-%m-%dT%H:%M:%S.%3NZ")
+          echo "::set-output name=formatted_time::$formatted_time"
         
 
       - name: checkout repo content
