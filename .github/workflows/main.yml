@@ -18,7 +18,7 @@ jobs:
     name: ${{inputs.test}} OKAYYYY
     steps:
       - name: Set Current Time
-        if: inputs.customTime = ''
+        if: inputs.customTime == ''
         id: set_time
         run: |
           echo "TEST=$(date -u +"%Y-%m-%dT%H:%M:%S.%3NZ")" >> $GITHUB_ENV
