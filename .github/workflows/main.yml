@@ -9,6 +9,8 @@ on:
         default: "Yeha"
       customTime:
         description: "jaja"
+      use_cappa_release:
+        default: false
 
 jobs:
   build:
