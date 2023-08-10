@@ -49,3 +49,7 @@ jobs:
 
       - name: ansi test
         run: echo -e "\e[43m Test \e[43m"
+      
+      
+      - name: some more test
+        run: echo ${{ true if not inputs.use_cappa_release else inputs.use_cappa_release }}
