@@ -47,4 +47,4 @@ jobs:
       
       
       - name: some more test
-        run: echo ${{ true if not inputs.use_cappa_release else inputs.use_cappa_release }}
+        run: echo ${{ inputs.use_cappa_release || true }}
