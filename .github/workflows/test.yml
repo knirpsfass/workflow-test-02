@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: aaaaaa
-        uses: knirpsfass/workflow-test-02/.github/workflows/action@main
+        uses: knirpsfass/workflow-test-02/.github/action@main
         with:
           test: ${{ inputs.abc }}
