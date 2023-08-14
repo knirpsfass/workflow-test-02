@@ -14,4 +14,4 @@ jobs:
       - name: aaaaaa
         uses: knirpsfass/workflow-test-02/.github/action@main
         with:
-          test: ${{ inputs.abc || true }}
+          test: ${{ false || true }}
