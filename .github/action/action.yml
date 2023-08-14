@@ -9,4 +9,5 @@ runs:
   using: composite
   steps:
     - name: echoooo
+      shell: bash
       run: echo ${{ inputs.test }}
