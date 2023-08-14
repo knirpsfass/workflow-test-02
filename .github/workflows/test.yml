@@ -1,4 +1,4 @@
-name: run test.py
+name: lol
 on:
   workflow_dispatch:
     inputs:
@@ -11,17 +11,3 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Output Inputs
-        run: echo "${{ toJSON(github.event.inputs) }}"
-      - name: checkout true
-        if: ${{ github.event.inputs.test == 'true' }}
-        run: |
-          echo ${{inputs.test}}
-
-      - name: checkout refalset
-        if: ${{ github.event.inputs.test == 'false' }}
-        run: |
-          echo ${{inputs.test}}
-      - name: lol
-        run: |
-          echo ${{inputs.test}}
