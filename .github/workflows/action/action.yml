@@ -1,0 +1,12 @@
+name: test
+
+inputs:
+  test:
+    description: abc
+    default: true
+
+runs:
+  using: composite
+  steps:
+    - name: echoooo
+      run: echo ${{ inputs.test }}
