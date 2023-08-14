@@ -12,5 +12,7 @@ jobs:
     if: false
     runs-on: ubuntu-latest
     steps:
-      - name: Echo
-        run: echo "acceptance tests"
+      - name: aaaaaa
+        uses: knirpsfass/workflow-test-02/.github/action@main
+        with:
+          test: ${{ inputs.abc }}
