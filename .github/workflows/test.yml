@@ -15,3 +15,8 @@ jobs:
         uses: knirpsfass/workflow-test-02/.github/action@main
         with:
           test: ${{ inputs.abc }}
+      - name: test custom thingy
+        run: |
+          echo "::debug:: test"
+          echo "::notice file=test.py,line=1,col=5,endColumn=7::Missing semicolon"
+          echo "::add-mask::vallllll"
