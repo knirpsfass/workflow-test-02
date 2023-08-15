@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      MY_NAME: "Mona The Octocat"
     steps:
       - name: aaaaaa
         uses: knirpsfass/workflow-test-02/.github/action@main
@@ -19,4 +21,5 @@ jobs:
         run: |
           echo "::debug:: test"
           echo "::notice file=test.py,line=1,col=5,endColumn=7::Missing semicolon"
-          echo "::add-mask::vallllll"
+          echo "::add-mask::$MY_NAME"
+          echo $MY_NAME
