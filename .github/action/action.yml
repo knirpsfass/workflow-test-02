@@ -15,4 +15,4 @@ runs:
     - name: echoooo
       shell: bash
       run: |
-        echo "${{inputs.test}}" | jq -r '.'
+        echo "${{inputs.test}}" | jq -r '.[]'
