@@ -6,12 +6,14 @@ on:
     inputs:
       test:
         description: "lol"
-        default: "Yeha"
+        default: ${{ env.def }}
       customTime:
         description: "jaja"
       use_cappa_release:
         default: false
-
+env:
+  def: 'abc'
+  
 jobs:
   build:
     env:
