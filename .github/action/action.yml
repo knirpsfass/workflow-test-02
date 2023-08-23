@@ -17,7 +17,7 @@ runs:
       run: |
         
         t=${{ fromJson(inputs.test) }}
-        echo ${t} | jq '.'
+        echo ${t} | jq -r '.'
         echo "${t[0]}"
         echo $t
         for item in $t; do
