@@ -10,9 +10,13 @@ env:
 
 runs:
   using: composite
+  env:
+    - arr: ${{ fromJson(inputs.test) }}
   steps:
     - name: echoooo
       shell: bash
       run: |
         t=${{ fromJson(inputs.test) }}
-        echo ${t[0]}
+        echo "${t[0]}"
+        echo "${{env.arr}}
+        echo "${{env.arr[0}}
