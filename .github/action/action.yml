@@ -10,8 +10,6 @@ env:
 
 runs:
   using: composite
-  env:
-    arr: ${{ fromJson(inputs.test) }}
     
   steps:
     - name: echoooo
@@ -19,5 +17,6 @@ runs:
       run: |
         t=${{ fromJson(inputs.test) }}
         echo "${t[0]}"
-        echo "${{env.arr}}
-        echo "${{env.arr[0}}
+        for item in "${t[@]}"; do
+          echo "$item"
+        done
