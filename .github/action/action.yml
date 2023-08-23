@@ -15,8 +15,9 @@ runs:
     - name: echoooo
       shell: bash
       run: |
-        echo "${{inputs.test}}" | jq '.'
+        
         t=${{ fromJson(inputs.test) }}
+        echo "${t}" | jq '.'
         echo "${t[0]}"
         echo $t
         for item in $t; do
