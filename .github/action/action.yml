@@ -15,6 +15,7 @@ runs:
     - name: echoooo
       shell: bash
       run: |
+        INPUT_ARRAY=${{ inputs.test }}
         echo "$INPUT_ARRAY" | jq -r '.[]' | while IFS= read -r element; do
           echo "Element: $element"
         done
