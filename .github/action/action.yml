@@ -3,7 +3,10 @@ name: test
 inputs:
   test:
     description: abc
-    default: true
+    default: ${{ env.def }}
+
+env:
+  def: 'abc'
 
 runs:
   using: composite
