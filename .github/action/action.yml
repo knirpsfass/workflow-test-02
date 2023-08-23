@@ -14,5 +14,5 @@ runs:
     - name: echoooo
       shell: bash
       run: |
-        t = ${{ fromJson(inputs.test) }}
+        t=${{ fromJson(inputs.test) }}
         echo ${t[0]}
