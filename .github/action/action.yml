@@ -13,4 +13,6 @@ runs:
   steps:
     - name: echoooo
       shell: bash
-      run: echo ${{ fromJson(inputs.test) }}
+      run: |
+        t = ${{ fromJson(inputs.test) }}
+        echo ${t[0]}
