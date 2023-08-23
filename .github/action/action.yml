@@ -11,7 +11,8 @@ env:
 runs:
   using: composite
   env:
-    - arr: ${{ fromJson(inputs.test) }}
+    arr: ${{ fromJson(inputs.test) }}
+    
   steps:
     - name: echoooo
       shell: bash
