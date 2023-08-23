@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: aaaaaa
         uses: knirpsfass/workflow-test-02/.github/action@main
-        with:
-          test: ${{ inputs.abc }}
       - name: test custom thingy
         run: |
           echo "::debug:: test"
