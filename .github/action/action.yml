@@ -15,7 +15,7 @@ runs:
     - name: echoooo
       shell: bash
       run: |
-        t=${{ toJson(inputs.test) }}
+        t=${{ fromJson(inputs.test) }}
         echo "${t[0]}"
         echo $t
         for item in $t; do
