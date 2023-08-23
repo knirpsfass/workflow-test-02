@@ -15,4 +15,5 @@ runs:
     - name: echoooo
       shell: bash
       run: |
-        echo "${{inputs.test}}" | jq -r '.[]'
+        INPUT_ARRAY=${{ inputs.test }}
+        echo "$INPUT_ARRAY" | jq -r '.[]'
