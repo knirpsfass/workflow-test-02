@@ -18,6 +18,6 @@ runs:
         t=${{ toJson(inputs.test) }}
         echo "${t[0]}"
         echo $t
-        for item in ${{ t }}; do
+        for item in $t; do
           echo "$item"
         done
