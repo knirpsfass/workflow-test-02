@@ -17,6 +17,7 @@ jobs:
         uses: knirpsfass/workflow-test-02/.github/action@main
         with:
           test: '["abc", "eee"]'
+          req: $test
       - name: test custom thingy
         run: |
           echo "::debug:: test"
