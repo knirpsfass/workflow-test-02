@@ -7,6 +7,7 @@ inputs:
 
   req:
     descriptions: test req
+    default: "jup"
     required: true
 
 env:
