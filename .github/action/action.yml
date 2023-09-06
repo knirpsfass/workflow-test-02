@@ -7,7 +7,6 @@ inputs:
 
   req:
     descriptions: test req
-    default: "abc"
     required: true
 
 env:
