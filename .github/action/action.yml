@@ -5,6 +5,11 @@ inputs:
     description: abc
     default: '["abc", "eee"]'
 
+  req:
+    descriptions: test req
+    default: "abc"
+    required: true
+
 env:
   def: 'abc'
 
@@ -15,6 +20,7 @@ runs:
     - name: echoooo
       shell: bash
       run: |
+        echo ${{ inputs.req }}
         INPUT_ARRAY='${{ inputs.test }}'
         echo "$INPUT_ARRAY" | jq -r '.[]' | while IFS= read -r element; do
           echo "Element: $element"
