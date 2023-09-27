@@ -6,6 +6,8 @@ on:
         type: boolean
         description: Include 🎉🤣 emojis
         default: true
+      text:
+        description: Include 🎉🤣 emojis
 
 jobs:
   build:
@@ -24,3 +26,13 @@ jobs:
           echo "::notice file=test.py,line=1,col=5,endColumn=7::Missing semicolon"
           echo "::add-mask::$MY_NAME"
           echo $MY_NAME
+      - name: upload
+        run: touch text.txt
+        
+      - name: Upload product dependencies Files
+        uses: actions/upload-artifact@v3
+        if: success()
+        with:
+          name: ${{ (inputs.text && format('{0}-', inputs.text)) || ''}}text.txt
+          path: ./text.txt
+          if-no-files-found: ignore
