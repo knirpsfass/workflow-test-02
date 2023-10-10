@@ -30,9 +30,13 @@ jobs:
         run: touch text.txt
         
       - name: Upload product dependencies Files
-        uses: actions/${{env.UPLOAD || 'upload-artifact'}}@v3
+        uses: actions/upload-artifact@v3
         if: success()
         with:
           name: ${{ (inputs.text && format('{0}-', inputs.text)) || ''}}text.txt
           path: ./text.txt
           if-no-files-found: ignore
+
+      - name: cancel print
+        if: ${{ cancelled() }}
+        run: echo 'canceled'
