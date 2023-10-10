@@ -28,6 +28,9 @@ jobs:
           echo $MY_NAME
       - name: upload
         run: touch text.txt
+
+      - name:
+        run: sleep 10s
         
       - name: Upload product dependencies Files
         uses: actions/upload-artifact@v3
