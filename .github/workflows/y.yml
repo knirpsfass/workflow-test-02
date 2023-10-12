@@ -1,1 +1,45 @@
+name: yeeees
+on:
+  workflow_dispatch:
+    inputs:
+      test:
+        type: boolean
+        description: Include 🎉🤣 emojis
+        default: true
+      text:
+        description: Include 🎉🤣 emojis
 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      MY_NAME: "Mona The Octocat"
+    steps:
+      - name: aaaaaa
+        uses: knirpsfass/workflow-test-02/.github/action@main
+        with:
+          test: '["abc", "eee"]'
+          req: $test
+      - name: test custom thingy
+        run: |
+          echo "::debug:: test"
+          echo "::notice file=test.py,line=1,col=5,endColumn=7::Missing semicolon"
+          echo "::add-mask::$MY_NAME"
+          echo $MY_NAME
+      - name: upload
+        run: touch text.txt
+
+      - name:
+        run: sleep 10s
+        
+      - name: Upload product dependencies Files
+        uses: actions/upload-artifact@v3
+        if: success()
+        with:
+          name: ${{ (inputs.text && format('{0}-', inputs.text)) || ''}}text.txt
+          path: ./text.txt
+          if-no-files-found: ignore
+
+      - name: cancel print
+        if: ${{ cancelled() }}
+        run: echo 'canceled'
