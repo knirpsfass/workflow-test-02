@@ -1,5 +1,5 @@
 name: lol
-on:
+'on':
   workflow_dispatch:
     inputs:
       test:
