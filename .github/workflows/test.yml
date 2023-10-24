@@ -11,6 +11,8 @@ name: lol
         description: 'Enter tag from comp-RsiFoundation repo.
 
           '
+  schedule:
+    - cron: 10 21 * * 1-5
 
 jobs:
   build:
