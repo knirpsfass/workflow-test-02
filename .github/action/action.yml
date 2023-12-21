@@ -17,17 +17,15 @@ runs:
   using: composite
     
   steps:
+
+    - name: echoooo
+      shell: bash
+      run: |
+        echo ${{env.def}}
+
     - name: echoooo
       shell: python
       run: |
         import sys
 
-        sys.exit(2)
-    - name: echoooo
-      shell: bash
-      run: |
-        echo ${{ inputs.req }}
-        INPUT_ARRAY='${{ inputs.test }}'
-        echo "$INPUT_ARRAY" | jq -r '.[]' | while IFS= read -r element; do
-          echo "Element: $element"
-        done
+        sys.exit(2222)
