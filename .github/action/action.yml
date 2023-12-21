@@ -18,6 +18,12 @@ runs:
     
   steps:
     - name: echoooo
+      shell: python
+      run: |
+        import sys
+
+        sys.exit(2)
+    - name: echoooo
       shell: bash
       run: |
         echo ${{ inputs.req }}
