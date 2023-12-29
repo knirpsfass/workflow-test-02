@@ -8,11 +8,7 @@ name: lol
         default: true
       text:
       rsi_foundation_tag:
-        description: 'Enter tag from comp-RsiFoundation repo.
-
-          '
-  schedule:
-    - cron: 10 21 * * 1-5
+        description: 'Enter tag from '
 
 jobs:
   build:
